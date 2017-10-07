@@ -28,7 +28,7 @@ def main( ):
     global  mydir
    
     make_loger()
-    log.info('------------  '+ myname +'  - начало обработки ------------')
+    log.critical('------------  '+ myname +'  - начало обработки ------------')
 
     if  marvel_downloader.download( myname ) :
         log.info('Конвертация xlsx для исправления формата xlsx')
