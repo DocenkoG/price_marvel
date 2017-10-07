@@ -114,14 +114,13 @@ italic= False
                             ss = s2
                             if s3 != '' :  ss = ss + ' / ' + s3
                             if s4 != '' :  ss = ss + ' / ' + s4
-                            ss = quoted(ss)
                         elif outColName == 'наименование' :
                             s1 = getCellXlsx(row=i, col=in_columns_j['вендор'],       isDigit='N', sheet=sh) 
                             s2 = getCellXlsx(row=i, col=in_columns_j['наименование'], isDigit='N', sheet=sh) 
-                            ss = quoted( s1 + ' ' + s2)
+                            ss = s1 + ' ' + s2
                         else :
                             log.debug('Не определено вычисляемое поле: <' + outColName + '>' )
-                    sss.append(ss)
+                    sss.append( quoted( ss))
     
                 #sss.append(brand)
                 #sss.append(grpName)

@@ -30,9 +30,9 @@ def main( ):
     make_loger()
     log.info('------------  '+ myname +'  - начало обработки ------------')
 
-    if  True: #marvel_downloader.download( myname ) :
-        #log.info('Конвертация xlsx для исправления формата xlsx')
-        #os.system( myname + '_converter_xlsx.xlsm')
+    if  marvel_downloader.download( myname ) :
+        log.info('Конвертация xlsx для исправления формата xlsx')
+        os.system( myname + '_converter_xlsx.xlsm')
         marvel_converter.convert2csv( myname )
         shutil.copy2( myname + '.csv', 'c://AV_PROM/prices/' + myname +'/'+ myname + '.csv')
     log.info('------------  '+ myname +'  - обработка завершена ------------')
