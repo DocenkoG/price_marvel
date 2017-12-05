@@ -86,7 +86,7 @@ class Marvel(unittest.TestCase):
         driver.find_element_by_css_selector("input.bright-button").click()
         driver.find_element_by_link_text(u"Каталог").click()
         driver.find_element_by_css_selector("input.button-container-m.btn_ExportAll").click()
-	time.sleep(50)
+	time.sleep(60)
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
