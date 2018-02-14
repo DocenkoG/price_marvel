@@ -58,45 +58,7 @@ def convert2csv( myname ):
         try:
             ccc = float(getCellXlsx(row=i, col=in_columns_j['цена'], isDigit='Y', sheet=sh)) 
             if ccc <= 0 :
-                #print (i, ccc, 'Пусто!!!', getCellXlsx(row=i, col=in_columns_j['цена'], isDigit='N', sheet=sh))
                 continue
-                '''                                        # Атрибуты шрифта для настройки конфига
-                print( 'Строка', i, ccc.value,)
-                print( 'font=',   ccc.font.name,)
-                print( 'bold=',   ccc.font.bold,)
-                print( 'italic=', ccc.font.italic,)
-                print( 'size=',   ccc.font.size)
-                #print( 'colour=', ccc.font.color.rgb)
-                print( 'background=',ccc.fill.fill_type)
-                print( 'backgroundColor1=', ccc.fill.start_color)
-                print( 'backgroundColor2=', ccc.fill.end_color)
-                print( 'Строка', i, 'столбец', colGrp, 'значение', ccc.value)
-                bold= True
-bold= False / True
-italic= False / True
-size= 10.0
-background= solid / None
-font= Calibri
-italic= False
-
-                continue
-                '''
-
-#            if  GrpFontSize <= ccc.font.size :                      # Группа
-#                grpName = quoted(sh.cell(row=i, column=colGrp).value)
-#                subGrpName = ''
-#                print('группа', grpName)
-
-#            elif SubGrpFontSize == ccc.font.size :                  # Подгруппа
-#                subGrpName = quoted(sh.cell(row=i,column=colSGrp).value)
-    
-#            if True == ccc.font.bold :                              # Заголовок таблицы
-#                print('ddd')
-#                pass
-#            elif (None == sh.cell(row=i, column=in_columns_j['цена1']).value) :    # Пустая строка
-#                print('xxxx')
-#                pass
-#                print( 'Пустая строка:', sh.cell(row=i, column=in_columns_j['цена1']).value )
             else :                                                          # Информационная строка
                 sss = []                                                    # формируемая строка для вывода в файл
                 for outColName in out_columns_names :
@@ -121,10 +83,6 @@ italic= False
                         else :
                             log.debug('Не определено вычисляемое поле: <' + outColName + '>' )
                     sss.append( quoted( ss))
-    
-                #sss.append(brand)
-                #sss.append(grpName)
-                #sss.append(subGrpName)
                 ssss.append(','.join(sss))
         except Exception as e:
             log.debug('Exception: <' + str(e) + '> при обработке строки ' + str(i) +'<' + '>' )
