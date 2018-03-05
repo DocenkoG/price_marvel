@@ -253,6 +253,7 @@ def download( cfg ):
         time.sleep(15)
         #print(driver.page_source)
         driver.find_element_by_css_selector("input.button-container-m.btn_ExportAll").click()
+        time.sleep(55)
         driver.quit()
 
     except Exception as e:
